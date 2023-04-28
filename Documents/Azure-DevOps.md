@@ -14,3 +14,10 @@ az --version
 az login
 
 ```
+
+Git clone repos from Azure DevOps to local machine
+```bash
+git clone https://COMPANY@dev.azure.com/organization/project/_git/repo
+```
+Then it will ask for your password. This is NOT your Azure DevOps password.
+It is a credential token that you can get from `Clone Repository Page>Generate Git Credentials`.
