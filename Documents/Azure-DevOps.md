@@ -21,3 +21,8 @@ git clone https://COMPANY@dev.azure.com/organization/project/_git/repo
 ```
 Then it will ask for your password. This is NOT your Azure DevOps password.
 It is a credential token that you can get from `Clone Repository Page>Generate Git Credentials`.
+
+## 2. React and C-sharp
+Front-end: localhost:3000
+
+Back-end: localhost:5001/swagger/index.html
