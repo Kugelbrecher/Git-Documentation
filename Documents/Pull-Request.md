@@ -32,20 +32,13 @@ Notes from Kate: https://github.com/reboottime/WebDevelopment/issues/15
   
   ```bash
   # commit changes to a branch other than Main
+  # it is recommended to create a new branch for each feature
   git checkout -b <branch name>
   ```
 
   ```bash
-  # add changes to staging area
+  # then normal git workflow
   git add <file name>
-  ```
-
-  ```bash
-  # commit changes to local repo
   git commit -m "<commit message>"
-  ```
-
-  ```bash
-  # push changes to remote repo
   git push origin <branch name>
   ```
