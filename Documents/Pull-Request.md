@@ -19,6 +19,8 @@ Notes from Kate: https://github.com/reboottime/WebDevelopment/issues/15
   - origin  https://consentify@dev.azure.com/consentify/Main/_git/Main (push)
   ```
 
+  git branch -M main
+
   ```bash
   # other people may have updated the remote repo
   # use fetch + merge (or pull) to update local repo
