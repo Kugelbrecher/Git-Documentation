@@ -1,30 +1,50 @@
 # Git Commands
 
-
+----
 ## **1. git init, git clone**
-ducumentation [here](https://github.com/git-guides/git-init), [here](https://git-scm.com/docs/git-init)
+ducumentation for git init [here](https://github.com/git-guides/git-init) and [here](https://git-scm.com/docs/git-init)
 
 ### 1.1 git init vs git clone
 
-| git init | git clone |
-|  | the remote already exists |
+|       | git init | git clone |
+| ----- | -------- | --------- |
+| usage | start a new repository locally | remote repository already exists |
+| command | `git init` | `git clone <url>` |
 
-Remove git:
-```bash
-rm -rf .git*
-```
+**git init**
+- Options:
+  - `git init`: transform the current directory into a git repository
+  - `git init <directory>`: create a new git repository in the specified directory
+  - `git init --bare`: N/A
+- Steps:
+  - initialize the repository
+  - create a remote repository somewhere like GitHub.com
+  - add the remote URL to your local git repository with `git remote add origin <url>` 
+  - shape your history into at least one commit by using `git add` to stage the existing files, and `git commit` to make the snapshot
+  - push to the remote and set up the tracking relationship for good with `git push -u origin master`
+  ```bash
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/Kugelbrecher/fondren-fellow.git
+  git push -u origin main
+  ```
+
+**git clone**
+
+### 1.2 **Issues**
+- When error with initializing git repository, you may suspect that another parent directory is also a Git repository. To fix this, check if there is a `.git` folder in the other directory, using `git status` or ```ls -al```. Then remove the `.git` folder using `rm -rf .git` or `rm -rf .git*`.
+
+
+----
+## 2. **git branch, git checkout**
+documentation for git branch [here](https://git-scm.com/docs/git-branch), git checkout
 
 
 
 
-
-
-
-## 2. [git branch](https://git-scm.com/docs/git-branch), [git checkout](https://git-scm.com/docs/git-checkout), [git switch](https://git-scm.com/docs/git-switch)
-
-
-
-
+----
 ## 3. [git fetch](https://git-scm.com/docs/git-fetch), [git merge](https://git-scm.com/docs/git-merge), [git pull](https://git-scm.com/docs/git-pull)
 
 Fetch: 
