@@ -41,7 +41,20 @@ ducumentation for git init [here](https://github.com/git-guides/git-init) and [h
 ## 2. **git branch, git checkout**
 documentation for git branch [here](https://git-scm.com/docs/git-branch), git checkout
 
+### 1.1 git branch vs git checkout
 
+**git branch**
+
+**git checkout**
+
+
+### 1.2 **Issues**
+- `git branch` gives some weird outcome, as shown in the image below:
+  - <img src="../sources/branch1.jpg" width="500">
+  - The problem probaly lies in Oh My Zsh. When you see this outcome, you can exit by typing `q`
+  - We can instead use `git -P branch`, which will give the expected outcome
+  - or people says `git config --global core.pager cat` can solve the problem
+  - lets try above two options in working environment
 
 
 ----
