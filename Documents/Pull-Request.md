@@ -44,3 +44,27 @@ Notes from Kate: https://github.com/reboottime/WebDevelopment/issues/15
   git commit -m "<commit message>"
   git push origin <branch name>
   ```
+
+
+## 4. git ignore
+
+https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
+
+step1: Remove existing .DS_Store files from the repository:
+
+```bash
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+```
+
+step2: Add .DS_Store to your .gitignore file:
+add this line: .DS_Store
+or 
+```bash
+echo .DS_Store >> .gitignore
+```
+this will also create the .gitignore file if it doesn't exist already.
+
+step3: commit the changes to remote repo
+git add .
+git commit -m "removed .DS_Store files"
+git push origin <branch name>
