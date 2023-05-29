@@ -4,6 +4,8 @@
 
 Notes from Kate: https://github.com/reboottime/WebDevelopment/issues/15
 
+Small files, large amount, so that we can update and finish PR quickly.
+
 ## 2. Update my local repo
   
   ```bash

@@ -1,5 +1,48 @@
 # Git Commands
 
+Summary of git commands table:
+
+<table>
+  <tr>
+    <th>Command</th>
+    <th>Options</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td rowspan="3">git init</td>
+    <td></td>
+    <td>Transform the current directory<br>into a git repository</td>
+  </tr>
+  <tr>
+    <td>&lt;directory&gt;</td>
+    <td>Create a new git repository<br>in the specified directory</td>
+  </tr>
+  <tr>
+    <td>--bare</td>
+    <td>Initialize an empty Git repository<br>without a working directory</td>
+  </tr>
+  <tr>
+    <td>git clone</td>
+    <td>&lt;url&gt;</td>
+    <td>Clone a remote repository to local</td>
+  </tr>
+  <tr>
+    <td>git branch</td>
+    <td>&lt;branch name&gt;</td>
+    <td>Create a new branch, stay on current branch</td>
+  </tr>
+  <tr>
+    <td rowspan="2">git checkout</td>
+    <td>&lt;existing branch name&gt;</td>
+    <td>Redirect to the existing branch</td>
+  </tr>
+  <tr>
+    <td>-b &lt;new branch name&gt;</td>
+    <td>Create and redirect to the new branch</td>
+  </tr>
+</table>
+
+
 ----
 ## **1. git init, git clone**
 ducumentation for git init [here](https://github.com/git-guides/git-init) and [here](https://git-scm.com/docs/git-init)
@@ -42,6 +85,10 @@ ducumentation for git init [here](https://github.com/git-guides/git-init) and [h
 documentation for git branch [here](https://git-scm.com/docs/git-branch), git checkout
 
 ### 1.1 git branch vs git checkout
+
+|       | git branch | git checkout |
+| ----- | -------- | --------- |
+| usage | git branch <branch name> creates a new branch, but stay on current branch | git checkout -b <branch name> creates and redirects to the new branch |
 
 **git branch**
 
