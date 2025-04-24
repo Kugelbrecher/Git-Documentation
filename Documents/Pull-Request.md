@@ -31,6 +31,45 @@ Small files, large amount, so that we can update and finish PR quickly.
   git merge origin/master
   ```
 
+  ```bash
+  # before making a PR, make sure update teammate commits under same branch
+  # 1. switch to the branch:
+  git checkout branchA
+
+  # 2. downloads all the changes from the remote repository 
+  # but doesn't integrate them into my local branches yet:
+  git fetch origin
+
+  # 3. git will try to replay branchA's commits on top of the latest origin/main.
+  git rebase origin/main
+  # If there are no conflicts: Git will automatically apply your commits.
+  # If there are conflicts: Git will pause the rebase and tell you which files have conflicts. You'll need to:
+    # Open the conflicted files in your editor.
+    # Manually resolve the conflicts.
+    # Stage the resolved files: git add <conflicted_file>
+    # Continue the rebase: git rebase --continue
+    # Repeat steps 2-4 for any further conflicts.
+
+  # 4. Once the rebase is complete, you'll need to force-push your changes to the remote repository:
+  git push --force-with-lease origin branchA
+  ```
+
+```bash
+  # once PR is approved, I need to update my local repo and branches:
+  git checkout main
+  git fetch origin
+  git merge origin/main
+  # This makes your local main the official, up-to-date version on the remote.
+  git push origin main
+
+  # also need to update the local branches worked on and other branches:
+  git checkout branchA
+  git rebase origin/main
+  git push --force-with-lease origin branchA
+  git checkout branchB
+  git rebase origin/main
+  git push --force-with-lease origin branchB
+```
 
 ## 3. Update remote repo
   
