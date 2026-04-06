@@ -75,4 +75,35 @@ Since you rewrote history, you need to **force push**:
 git push origin your-branch --force
 ```
 
+---
+
+### Edge Case: Unstaged changes block the rebase
+
+If you run `git rebase -i HEAD~N` and see:
+
+```
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+```
+
+Git won't start the rebase with a dirty working directory. Fix it first:
+
+**Option A — Stash your changes temporarily:**
+
+```bash
+git stash push -m "WIP before squash"
+git rebase -i HEAD~N
+# ... complete the squash ...
+git stash pop
+```
+
+**Option B — Stage and commit them first:**
+
+```bash
+git add .
+git commit -m "WIP: save before squash"
+git rebase -i HEAD~N   # now squash this commit in too if needed
+```
+
+After the rebase completes, force push as normal.
 
